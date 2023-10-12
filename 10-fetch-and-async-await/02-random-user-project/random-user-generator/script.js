@@ -47,7 +47,7 @@ function fetchUser() {
   fetch("https://randomuser.me/api/")
     .then((response) => response.json())
     .then((data) => {
-      hideSpinner(); //Dont show spinner once we sucessfully fetched and displayed the data
+      hideSpinner(); //Dont show spinner once we successfully fetched the data
       displayUser(data.results[0]); //Function
     });
 }
