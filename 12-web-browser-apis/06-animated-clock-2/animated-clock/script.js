@@ -3,6 +3,11 @@ function clock() {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
 
+  const faceColor = document.getElementById("face-color").value;
+  const borderColor = document.getElementById("border-color").value;
+  const linesColor = document.getElementById("line-color").value;
+  const largeHandColor = document.getElementById("large-hand-color").value;
+  const secondHandColor = document.getElementById("second-hand-color").value;
   // Setup canvas
   ctx.save(); // save the default state
   ctx.clearRect(0, 0, 500, 500);
@@ -10,8 +15,8 @@ function clock() {
   ctx.rotate(-Math.PI / 2); // Rotate clock -90deg
 
   // Set default styles
-  ctx.strokeStyle = "#000000";
-  ctx.fillStyle = "#f4f4f4";
+  ctx.strokeStyle = linesColor;
+  ctx.fillStyle = faceColor;
   ctx.lineWidth = 5;
   ctx.lineCap = "round";
 
@@ -19,7 +24,7 @@ function clock() {
   ctx.save();
   ctx.beginPath();
   ctx.lineWidth = 14;
-  ctx.strokeStyle = "#800000";
+  ctx.strokeStyle = borderColor;
   ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
   ctx.stroke();
   ctx.fill();
@@ -62,7 +67,8 @@ function clock() {
   ctx.rotate(
     (Math.PI / 6) * hr + (Math.PI / 360) * min + (Math.PI / 21600) * sec
   );
-  ctx.strokeStyle = "#800000";
+
+  ctx.strokeStyle = largeHandColor;
   ctx.lineWidth = 14;
   ctx.beginPath();
   ctx.moveTo(-20, 0);
@@ -73,7 +79,7 @@ function clock() {
   // Draw min hand
   ctx.save();
   ctx.rotate((Math.PI / 30) * min + (Math.PI / 1800) * sec);
-  ctx.strokeStyle = "#800000";
+  ctx.strokeStyle = largeHandColor;
   ctx.lineWidth = 10;
   ctx.beginPath();
   ctx.moveTo(-28, 0);
@@ -84,8 +90,8 @@ function clock() {
   // Draw sec hand
   ctx.save();
   ctx.rotate((sec * Math.PI) / 30);
-  ctx.strokeStyle = "#FF7F50";
-  ctx.fillStyle = "#FF7F50";
+  ctx.strokeStyle = secondHandColor;
+  ctx.fillStyle = secondHandColor;
   ctx.lineWidth = 6;
   ctx.beginPath();
   ctx.moveTo(-30, 0);
