@@ -16,7 +16,8 @@ body {
 }
 
 #ball {
-    animation: roll infinite 3s linear;
+    /* animation: roll infinite 3s linear; */
+    /* The animation was commented out because we want to achieve the same effect using Javascript  */
     color: white;
     width: 25%;
     position: absolute;
