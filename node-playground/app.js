@@ -1,9 +1,9 @@
-const { capitalizeWords, makeMoney } = require("./utils.js");
+const axios = require("axios");
 
-console.log(capitalizeWords("hello eVErYone"));
-console.log(makeMoney(400));
+const getPost = async () => {
+  const res = await axios.get("https://jsonplaceholder.typicode.com/posts/1");
 
-const Person1 = require("./Person.js");
+  console.log(res.data);
+};
 
-const ini = new Person1("Heris", 23);
-ini.greet();
+getPost();
