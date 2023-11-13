@@ -1,11 +1,11 @@
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
