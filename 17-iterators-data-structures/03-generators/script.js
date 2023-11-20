@@ -21,4 +21,4 @@ console.log([...createTeamIterator(teams)]);
 
 const [first, second, third] = createTeamIterator(teams);
 
-console.log(first, second, third);
+console.log(first, second, third);g
