@@ -1,0 +1,36 @@
+const fizzBuzz = require("./fizzbuzz");
+
+describe("fizzbuzz", () => {
+  // Test if fizzBuzz is a function
+  it("should be a function", () => {
+    expect(typeof fizzBuzz).toEqual("function");
+  });
+
+  // Test if the function returns the number if not divisible by 3 or 5
+  it("should return the number if not divisible by 3 or 5", () => {
+    expect(fizzBuzz(3)).toEqual(3);
+    expect(fizzBuzz(39)).toEqual(39);
+    expect(fizzBuzz(77)).toEqual(77);
+  });
+
+  // Test if the function returns "Fizz" if divisible by 3
+  it("should return Fizz if divisible by 3", () => {
+    expect(fizzBuzz(3)).toEqual("Fizz");
+    expect(fizzBuzz(39)).toEqual("Fizz");
+    expect(fizzBuzz(77)).toEqual(77);
+  });
+
+  // Test if the function returns "Buzz" if divisible by 5
+  it("should return Buzz if divisible by 5", () => {
+    expect(fizzBuzz(3)).toEqual(3);
+    expect(fizzBuzz(39)).toEqual(39);
+    expect(fizzBuzz(80)).toEqual("Buzz");
+  });
+
+  // Test if the function returns "FizzBuzz" if divisible by 3 and 5
+  it("should return FizzBuzz if divisible by 3 and 5", () => {
+    expect(fizzBuzz(15)).toEqual("FizzBuzz");
+    expect(fizzBuzz(30)).toEqual("FizzBuzz");
+    expect(fizzBuzz(45)).toEqual("FizzBuzz");
+  });
+});
