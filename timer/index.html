@@ -4,17 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/fontawesome.css">
     <title>Timer App</title>
 </head>
 
 <body>
-    <svg height="200" width="200">
-        <circle r="20" cx="30" cy="30" />
+    <svg height="400" width="400">
+        <circle r="190" cx="200" cy="200" stroke="green" fill="transparent" stroke-width="15"
+            transform="rotate(-90 200 200)" />
     </svg>
 
     <input type="text" id="duration" value="30">
-    <button id="start">Start</button>
-    <button id="pause">Pause</button>
+    <button id="start"><i class="fas fa-play"></i></button>
+    <button id="pause"><i class="fas fa-pause"></i></button>
 
     <script src="Timer.js"></script>
     <script src="index.js"></script>
