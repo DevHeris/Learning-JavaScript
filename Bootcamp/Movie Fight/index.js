@@ -1,3 +1,4 @@
+// Configuration object for autocomplete
 const autoCompleteConfig = {
   renderOption: (movie) => {
     const imageSrc = movie.Poster === "N/A" ? "" : movie.Poster;
@@ -26,6 +27,7 @@ const autoCompleteConfig = {
   },
 };
 
+// Initialize autocomplete for both sides
 createAutoComplete({
   ...autoCompleteConfig,
   root: document.querySelector("#right-autocomplete"),
@@ -44,8 +46,11 @@ createAutoComplete({
   },
 });
 
+// Variables to store selected movies
 let leftMovie;
 let rightMovie;
+
+// Function to fetch movie details and update summary
 const onMovieSelect = async (movie, summaryElement, side) => {
   const { data } = await axios.get("http://www.omdbapi.com/", {
     params: {
@@ -62,11 +67,13 @@ const onMovieSelect = async (movie, summaryElement, side) => {
     rightMovie = data;
   }
 
+  // If both movies are selected, run the comparison
   if (leftMovie && rightMovie) {
     runComparison();
   }
 };
 
+// Function to compare and update styles based on movie statistics
 const runComparison = () => {
   const leftSideStats = document.querySelectorAll(
     "#left-summary .notification"
@@ -92,6 +99,7 @@ const runComparison = () => {
   });
 };
 
+// Function to generate HTML template for movie details
 const movieTemplate = (movieDetail) => {
   const dollars = parseInt(
     movieDetail.BoxOffice.replace(/\$/g, "").replace(/,/g, "")

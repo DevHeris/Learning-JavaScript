@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <!-- External libraries and stylesheets -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css" />
@@ -9,6 +10,7 @@
 </head>
 
 <body>
+  <!-- Hero section -->
   <section class="hero is-primary is-bold">
     <div class="hero-body">
       <div class="container">
@@ -21,25 +23,31 @@
       </div>
     </div>
   </section>
+
+  <!-- Main content -->
   <div class="container">
     <div class="columns">
+      <!-- Left column with autocomplete and summary -->
       <div class="column">
         <div id="left-autocomplete"></div>
         <div id="left-summary"></div>
       </div>
 
+      <!-- Right column with autocomplete and summary -->
       <div class="column">
         <div id="right-autocomplete"></div>
         <div id="right-summary"></div>
-
       </div>
     </div>
 
+    <!-- Tutorial notification -->
     <div class="column is-half notification is-primary tutorial">
       <h1 class="title">Search For a Movie on Both Sides</h1>
       <p class="subtitle">We will tell you which is best!</p>
     </div>
   </div>
+
+  <!-- JavaScript files -->
   <script src="utils.js"></script>
   <script src="autocomplete.js"></script>
   <script src="index.js"></script>
